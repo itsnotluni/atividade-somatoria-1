@@ -1,0 +1,41 @@
+# {imc:.2f}
+#| Faixa de IMC        | Classificação                  |
+#|---------------------|--------------------------------|
+#| < 18.5              | Abaixo do peso                 |
+#| 18.5 – 24.9         | Peso normal                    |
+#| 25.0 – 29.9         | Sobrepeso                      |
+#| 30.0 – 34.9         | Obesidade Grau I               |
+#| 35.0 – 39.9         | Obesidade Grau II              |
+#| ≥ 40.0              | Obesidade Grau III (mórbida)   |
+
+#3. O IMC é exibido junto com uma mensagem personalizada:
+#- IMC ≥ 30.0 → `Cuidado com a Saúde`
+#- IMC < 30.0 → `Tudo ok`
+
+barra = "|---------------------|--------------------------------|"
+print("| ---------- IMC ---------- |")
+print("| Faixa de IMC        | Classificação                  |")
+print(barra)
+print("| < 18.5              | Abaixo do peso                 |")
+print("| 18.5 – 24.9         | Peso normal                    |")
+print("| 25.0 – 29.9         | Sobrepeso                      |")
+print("| 30.0 – 34.9         | Obesidade Grau I               |")
+print("| 35.0 – 39.9         | Obesidade Grau II              |")
+print("| ≥ 40.0              | Obesidade Grau III (mórbida)   |")
+
+nome = input("| Informe seu nome: ")
+altura = float(input("| Informe a sua altura: "))
+peso = int(input("| Informe o seu peso: "))
+imc = peso / altura ** 2
+if imc <= 18.5:
+    print(f"{nome}, seu imc é {imc:.2f}, você está abaixo do peso. O recomendado é entre 18.5 à 25, recomenda-se que ganhe um pouco mais de peso.")
+elif imc <= 24.9:
+    print(f"{nome}, seu imc é {imc:.2f}, peso normal. Está dentro das recomendações!")
+elif imc <= 29.9:
+    print(f"{nome}, seu imc é {imc:.2f}, você está com sobrepeso. O recomendado é entre 18.5 à 25.")
+elif imc <= 34.9:
+    print(f"{nome}, seu imc é {imc:.2f}, você está com obesidade de grau I. O recomendado é entre 18.5 à 25, é bom ir atrás de ajuda profissional para não agravar a situação.")
+elif imc <= 39.9:
+    print(f"{nome}, seu imc é {imc:.2f}, você está com obesidade de grau II. O recomendado é entre 18.5 à 25, busque ajuda profissional o quanto antes, você está bem acima do peso.")
+else:
+    print(f"{nome}, seu imc é {imc:.2f}, você está com obesidade de grau III. O recomendado é entre 18.5 à 25. Recomendamos que procure ajuda profissional para auxiliar na perca de peso.")
